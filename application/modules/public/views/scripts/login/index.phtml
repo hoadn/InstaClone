@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="<?php echo $_SESSION['user']['locale']; ?>" class="hl-<?php echo $_SESSION['user']['locale']; ?> not-logged-in ">
+<head>
+    <meta charset="UTF-8" />
+    <title>Log in &mdash; <?php echo SITE_NAME; ?></title>
+
+    <meta name="robots" content="noimageindex" />
+
+    <link rel="Shortcut Icon" type="image/x-icon" href="<?php echo BASEURL; ?>/images/favicon.ico" />
+
+
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+
+
+
+        <script type="text/javascript" src="<?php echo BASEURL; ?>/js/jquery.js"></script>
+        <script type="text/javascript" src="<?php echo BASEURL; ?>/js/bluebar.js"></script>
+        <script type="text/javascript" src="<?php echo BASEURL; ?>/js/webtoolkit.sha1.js"></script>
+
+        <script type="text/javascript">
+            __DEV__ = false;
+            window._jscalls = [];
+        </script>
+
+
+<script type="text/javascript" src="<?php echo BASEURL; ?>/js/polyfills-build/polyfill_modern.js"></script>
+<script data-main="<?php echo BASEURL; ?>/js/modules-build/main.js" src="<?php echo BASEURL; ?>/js/require.js"></script>
+        <script type="text/javascript" src="<?php echo BASEURL; ?>/js/strings/strings_en.js"></script>
+
+
+
+
+    <meta id="viewport" name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#id_username").focus();
+        setTimeout(function() {
+            document.getElementById('viewport').setAttribute('content', 'width='+ window.innerWidth + ', user-scalable=no');
+        }, 5);
+    });
+</script>
+
+
+
+    <link rel="stylesheet" type="text/css" href="<?php echo BASEURL; ?>/css/public/dialog-main.css"/>
+    <!--[if lt IE 9]>
+    <style>
+        .dialog-outer {
+            min-height: 0;
+        }
+    </style>
+    <![endif]-->
+
+
+</head>
+<body class="p-dialog oauth-login">
+
+<div class="root">
+
+<section class="dialog-outer">
+    <div class="dialog">
+
+        <header>
+            <h1 class="logo"><?php echo SITE_NAME; ?></h1>
+
+        </header>
+
+
+
+
+
+        <div class="dialog-main">
+
+
+
+            <form method="POST" name="login-form" id="login-form" onsubmit="document.forms['login-form']['password'].value = SHA1(document.forms['login-form']['password'].value);" class="adjacent" action="<?php echo BASEURL; ?>/accounts/login/?next=/accounts/edit/">
+                <input type="hidden" name="csrfmiddlewaretoken" value="a426e376ee6a1fc339701a7dd487e0b7"/>
+                <p><label for="id_username">Username:</label> <input name="username" maxlength="30" autocapitalize="off" autocorrect="off" type="text" id="id_username" /></p>
+				<p>
+					<label for="id_password">Password:</label> 
+					<input autocapitalize="off" autocorrect="off" type="password" name="password" id="id_password" />
+				</p>
+                <p class="form-actions">
+                    <a href="<?php echo BASEURL; ?>/accounts/password/reset/">Forgot password?</a>
+                    <input type="submit" class="button-green" value="Log in" />
+                </p>
+            </form>
+        </div>
+
+    </div>
+</section>
+
+<script>
+    $(window).load(
+        function() {
+            $("#id_username").focus();
+        }
+    );
+</script>
+
+</div> <!-- .root -->
+
+
+
+
+</body>
+</html>

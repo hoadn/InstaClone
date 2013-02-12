@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="<?php echo $_SESSION['user']['locale']; ?>" class="hl-<?php echo $_SESSION['user']['locale']; ?> not-logged-in ">
+<head>
+    <meta charset="UTF-8" />
+    <title><?php echo SITE_NAME; ?></title>
+
+    <meta name="robots" content="noimageindex" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <link rel="Shortcut Icon" type="image/x-icon" href=<?php echo BASEURL; ?>/images/favicon.ico" />
+
+    <script type="text/javascript" src="<?php echo BASEURL; ?>/js/jquery.js"></script>
+    <script type="text/javascript" src="<?php echo BASEURL; ?>/js/bluebar.js"></script>
+
+    <script type="text/javascript">
+        __DEV__ = false;
+        window._jscalls = [];
+    </script>
+
+    <script type="text/javascript" src="<?php echo BASEURL; ?>/js/polyfills-build/polyfill_old.js"></script>
+    <script data-main="<?php echo BASEURL; ?>/js/modules-build/main.js" src="<?php echo BASEURL; ?>/js/require.js"></script>
+    <script type="text/javascript" src="<?php echo BASEURL; ?>/js/strings/strings_de.js"></script>
+    <script type="text/javascript" src="<?php echo BASEURL; ?>/js/slideshow.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="<?php echo BASEURL; ?>/css/public/home.css"/>
+</head>
+
+<body class="page-home">
+
+<div class="root">
+
+
+    <div class="page">
+
+
+
+        <div class="main">
+
+    <div id="home-bg"></div>
+    <div class="wrap">
+        <div class="iphone" id="iphone">
+            <img src="<?php echo BASEURL; ?>/images/public/phones.png" alt="iPhone and Android"/>
+            <div id="iphone-overlay">
+                <img src="<?php echo BASEURL; ?>/images/public/screenshot1.jpg" class="active" alt="Instagram for iPhone - Photo Feed"/>
+                <img src="<?php echo BASEURL; ?>/images/public/screenshot2.jpg" alt="Instagram for iPhone - Camera"/>
+                <img src="<?php echo BASEURL; ?>/images/public/screenshot3.jpg" alt="Instagram for iPhone - Explore" />
+                <img src="<?php echo BASEURL; ?>/images/public/screenshot4.jpg" alt="Instagram for iPhone - Following Feed" />
+            </div>
+        </div>
+        <div class="content">
+            <img src="<?php echo BASEURL; ?>/images/public/logo.png" class="instagram-title" alt="Instagram - Ein schneller und schöner Weg über Dein iPhone, Deine Bilder zu zeigen "/>
+            <div class="tab">
+                <img src="<?php echo BASEURL; ?>/images/public/paperclip.png" class="paperclip" alt="paperclip">
+                <div class="tab-content">
+                    <h1><?php echo $_SESSION['site']['phrases']['homepage_header']; ?></h1>
+
+                    <?php echo $_SESSION['site']['phrases']['homepage_app_description']; ?>
+
+                    <p>
+                        <div class="platform-badge-container">
+                            <a class="platform-badge" href="http://itunes.com/apps/instagram/"><img src="<?php echo BASEURL; ?>/images/public/badge_ios.png" alt="Erhältlich im App Store"/></a>
+                            <a class="platform-badge" href="https://play.google.com/store/apps/details?id=com.instagram.android"><img src="<?php echo BASEURL; ?>/images/public/badge_android.png" alt="Coming soon to Android"/></a>
+                        </div>
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+        </div> <!-- .main -->
+
+
+    </div> <!-- .page -->
+
+
+    <footer class="page-footer">
+        <div class="wrapper">
+            <nav>
+                <ul>
+                    <li><a href="<?php echo BASEURL; ?>/accounts/edit/"><?php echo $_SESSION['site']['phrases']['your_account']; ?></a></li>
+                    <li><a href="<?php echo BASEURL; ?>/about/us/"><?php echo $_SESSION['site']['phrases']['about_us']; ?></a></li>
+                    <li><a href="http://help.instagram.com/">Support</a></li>
+                    <li><a href="http://blog.instagram.com/">Blog</a></li>
+                    <li><a href="<?php echo BASEURL; ?>/developer/">API</a></li>
+                    <li><a href="<?php echo BASEURL; ?>/about/jobs/">Jobs</a></li>
+                    <li><a href="<?php echo BASEURL; ?>/about/legal/privacy/"><?php echo $_SESSION['site']['phrases']['privacy']; ?></a></li>
+                    <li><a href="<?php echo BASEURL; ?>/about/legal/terms/"><?php echo $_SESSION['site']['phrases']['terms']; ?></a></li>
+                </ul>
+            </nav>
+
+            <p class="copyright">&copy; 2012 <?php echo SITE_NAME; ?></p>
+        </div>
+    </footer>
+
+
+
+</div> <!-- .root -->
+
+
+
+
+</body>
+</html>

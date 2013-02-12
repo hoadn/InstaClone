@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="<?php echo $_SESSION['user']['locale']; ?>" class="hl-<?php echo $_SESSION['user']['locale']; ?> logged-in bb-loading can-open-media">
+<head>
+    <meta charset="UTF-8" />
+    <title><?php echo SITE_NAME; ?></title>
+    
+	<script type="text/javascript">
+		var BASEURL = '<?php echo BASEURL; ?>';
+	</script>    
+
+    <meta name="robots" content="noimageindex" />
+
+    <link rel="Shortcut Icon" type="image/x-icon" href="<?php echo BASEURL; ?>/images/favicon.ico" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    
+        <script type="text/javascript" src="<?php echo BASEURL; ?>/js/jquery.js"></script>
+        <script type="text/javascript" src="<?php echo BASEURL; ?>/js/bluebar.js"></script>
+
+        <script type="text/javascript">
+			window._jscalls = [
+  				["userprofile","init",[{"username":"<?php echo $_SESSION['user']['username']; ?>","bio":"","website":"","profile_picture":"<?php echo $_SESSION['user']['avatar_url']; ?>","full_name":"<?php echo $_SESSION['user']['full_name']; ?>","counts":{"media":0,"followed_by":0,"follows":0},"id":"<?php echo $_SESSION['user']['id']; ?>"},{"username":"<?php echo $_SESSION['user']['username']; ?>","bio":"<?php echo $_SESSION['user']['bio']; ?>","website":"<?php echo $_SESSION['user']['website']; ?>","profile_picture":"<?php echo $_SESSION['user']['avatar_url']; ?>","full_name":"<?php echo $_SESSION['user']['full_name']; ?>","id":"<?php echo $_SESSION['user']['id']; ?>"},{"incoming_request":false,"followed_by":false,"outgoing_request":false,"following":false,"blocking":false,"is_private":false},[],false,[]]],
+			];
+		</script>
+
+
+	<script type="text/javascript" src="<?php echo BASEURL; ?>/js/polyfills-build/polyfill_modern.js"></script>
+	<script data-main="<?php echo BASEURL; ?>/js/modules-build/main.js" src="<?php echo BASEURL; ?>/js/require.js"></script>
+    <script type="text/javascript" src="<?php echo BASEURL; ?>/js/strings/strings_en.js"></script>
+    <script type="text/javascript" src="<?php echo BASEURL; ?>/js/json2.js"></script>
+    
+    <meta property="og:type" content="profile" />
+    <meta property="og:image" content="<?php echo $_SESSION['user']['avatar_url']; ?>"/>
+    <meta property="og:title" content="<?php echo $_SESSION['user']['username']; ?> on Instagram"/>
+    <meta property="og:url" content="<?php echo $_SESSION['user']['profile_url']; ?>"/>
+
+    <link rel="stylesheet" type="text/css" href="<?php echo BASEURL; ?>/css/public/profile-main.css"/>
+
+
+</head>
+<body class="page-profile">
+
+<div class="root">
+
+
+    <div class="page">
+        
+        <header class="top-bar">
+            <div class="wrapper">
+                <hgroup>
+                    <h1 class="logo"><a href="<?php echo BASEURL; ?>"><?php echo SITE_NAME; ?></a></h1>
+                    
+                </hgroup>
+
+                
+
+                <div class="account-state">
+                    <ul class="actions">
+                        
+                        
+                        <li id="link_profile" class="link-profile has-dropdown">
+                            <a href="javascript:;">
+                                
+    <span class="img img-outset current-user-avatar" style="background-image: url(<?php echo $_SESSION['user']['avatar_url']; ?>);">
+        <img src="<?php echo $_SESSION['user']['avatar_url']; ?>" onerror="imageFallback(this);" alt="" />
+        <b></b>
+    </span>
+
+                                <strong><?php echo $_SESSION['user']['username']; ?></strong>
+                            </a>
+
+                            <div class="dropdown">
+                                <i></i>
+
+                                <ul>
+                                    <li><a href="<?php echo $_SESSION['user']['profile_url']; ?>">View Profile</a></li>
+                                    <li><a href="<?php echo BASEURL; ?>/accounts/edit/">Edit Profile</a></li>
+                                    <li><a href="<?php echo BASEURL; ?>/accounts/badges/">Badges</a></li>
+                                    <li><a href="<?php echo BASEURL; ?>/accounts/logout/">Log Out</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </header> <!-- .top-bar -->
+        
+
+        
+        <div class="main">
+            
+
+		<?php if( $this->data['private_profile'] ): ?>
+			<?php if( $this->data['id'] == $_SESSION['user']['id'] ): ?>
+				<div class="header-notice privacy-notice">        
+        			<p>
+        				<strong><?php echo $_SESSION['site']['phrases']['self_profile_privacy_notice']; ?></strong>
+        			</p>        
+    			</div>
+    		<?php else: ?>
+				<div class="header-notice privacy-notice">        
+        			<p>
+        				<strong><?php echo $_SESSION['site']['phrases']['profile_privacy_notice']; ?></strong>
+        			</p>        
+    			</div>    			
+			<?php endif; ?>
+		<?php endif; ?>
+    
+
+    <header class="feed-header" id="feed-header">
+        <div class="compWrapper" id="profile_comp">
+          <div class="compInnerWrapper">
+            <div class="compContainer compContainerLoading"></div>
+          </div>
+        </div>
+    </header>
+
+    <div class="profile-user" id="profile_user">
+        
+        <h1 id="profile_username"></h1>
+
+        <p class="avatar-container">
+            <span id="user_avatar" class="img img-inset user-avatar">
+            </span>
+            <span id="avatar_action" class="avatar-action">
+                <a class="button" href="#">&nbsp;</a>
+            </span>
+        </p>
+
+        <p class="user-bio" id="user_bio"></p>
+
+        <ul class="user-stats" id="user_stats">
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+
+    <section class="feed-photos" id="feed-photos">
+        <div class="photo-grid">
+            <ul id="photo_feed" class="photo-feed"></ul>
+        </div>
+    </section>
+
+    <section class="profile-media-modal hidden" id="profile-media-modal">
+    </section>
+
+        </div> <!-- .main -->
+        
+
+    </div> <!-- .page -->
+
+    
+    <footer class="page-footer">
+        <div class="wrapper">
+            <nav>
+                <ul>
+                    <li><a href="<?php echo BASEURL; ?>/accounts/edit/">Your Account</a></li>
+                    <li><a href="<?php echo BASEURL; ?>/about/us/">About us</a></li>
+                    <li><a href="http://help.instagram.com/">Support</a></li>
+                    <li><a href="http://blog.instagram.com/">Blog</a></li>
+                    <li><a href="<?php echo BASEURL; ?>/developer/">API</a></li>
+                    <li><a href="<?php echo BASEURL; ?>/about/jobs/">Jobs</a></li>
+                    <li><a href="<?php echo BASEURL; ?>/about/legal/privacy/">Privacy</a></li>
+                    <li><a href="<?php echo BASEURL; ?>/about/legal/terms/">Terms</a></li>
+                </ul>
+            </nav>
+
+            <p class="copyright">&copy; 2012 <?php echo SITE_NAME; ?></p>
+        </div>
+    </footer>
+    
+
+
+</div> <!-- .root -->
+
+
+
+</body>
+</html>

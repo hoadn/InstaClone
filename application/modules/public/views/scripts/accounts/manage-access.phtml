@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="<?php echo $_SESSION['user']['locale']; ?>" class="hl-<?php echo $_SESSION['user']['locale']; ?> logged-in ">
+<head>
+    <meta charset="UTF-8" />
+    <title>Authorized Applications &bull; <?php echo SITE_NAME; ?></title>
+
+    <meta name="robots" content="noimageindex" />
+
+    <link rel="Shortcut Icon" type="image/x-icon" href="<?php echo BASEURL; ?>/images/favicon.ico" />
+
+    
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    
+
+    
+        <script type="text/javascript" src="<?php echo BASEURL; ?>/js/jquery.js"></script>
+        <script type="text/javascript" src="<?php echo BASEURL; ?>/js/bluebar.js"></script>
+
+        <script type="text/javascript">
+			window._jscalls = [];
+		</script>
+
+
+		<script type="text/javascript" src="<?php echo BASEURL; ?>/js/polyfills-build/polyfill_modern.js"></script>
+		<script data-main="<?php echo BASEURL; ?>/js/modules-build/main.js" src="<?php echo BASEURL; ?>/js/require.js"></script>
+        <script type="text/javascript" src="<?php echo BASEURL; ?>/js/strings/strings_en.js"></script>
+    
+
+   		<script type="text/javascript" src="<?php echo BASEURL; ?>/js/navigation.js"></script>
+		<script type="text/javascript" src="<?php echo BASEURL; ?>/js/tooltips.js"></script>
+
+   		<link rel="stylesheet" type="text/css" href="<?php echo BASEURL; ?>/css/public/accounts-main.css"/>
+
+
+</head>
+<body class="sidebar-page cards-page">
+
+<div class="root">
+
+
+    <div class="page">
+        
+        <header class="top-bar">
+            <div class="wrapper">
+                <hgroup>
+                    <h1 class="logo"><a href="<?php echo BASEURL; ?>"><?php echo SITE_NAME; ?></a></h1>
+                    
+                </hgroup>
+
+                
+
+                <div class="account-state">
+                    <ul class="actions">
+                        
+                        
+                        <li id="link_profile" class="link-profile has-dropdown">
+                            <a href="javascript:;">
+                                
+    <span class="img img-outset current-user-avatar" style="background-image: url(<?php echo BASEURL; ?>/images/profiles/anonymousUser.jpg);">
+        <img src="<?php echo BASEURL; ?>/images/profiles/anonymousUser.jpg" onerror="imageFallback(this);" alt="" />
+        <b></b>
+    </span>
+
+                                <strong><?php echo $_SESSION['user']['username']; ?></strong>
+                            </a>
+
+                            <div class="dropdown">
+                                <i></i>
+
+                                <ul>
+                                    <li><a href="<?php echo $_SESSION['user']['profile_url']; ?>">View Profile</a></li>
+                                    <li><a href="<?php echo BASEURL; ?>/accounts/edit/">Edit Profile</a></li>
+                                    <li><a href="<?php echo BASEURL; ?>/accounts/badges/">Badges</a></li>
+                                    <li><a href="<?php echo BASEURL; ?>/accounts/logout/">Log Out</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </header> <!-- .top-bar -->
+        
+
+        
+    <div class="sidebar">
+        <div class="wrapper">
+            <nav class="sidebar-nav">
+                <div class="sidebar-content">
+                
+    <h2><i></i>Your Account<span class="separator"> &bull; </span><span class="subtitle"></span></h2>
+    <ul>
+        <li >
+        <a href="<?php echo BASEURL; ?>/accounts/edit/">
+            
+            Edit Profile
+            
+            <i class="disclosure"></i>
+            
+        </a>
+        
+    </li>
+        <li >
+        <a href="<?php echo BASEURL; ?>/accounts/password/change/">
+            
+            Change Password
+            
+            <i class="disclosure"></i>
+            
+        </a>
+        
+    </li>
+        <li class="active">
+        <a href="<?php echo BASEURL; ?>/accounts/manage_access">
+            
+            Manage Applications
+            
+            <i class="disclosure"></i>
+            
+        </a>
+        
+    </li>
+        <li >
+        <a href="<?php echo BASEURL; ?>/accounts/badges/">
+            
+            Badges
+            
+            <i class="disclosure"></i>
+            
+        </a>
+        
+    </li>
+        <li >
+        <a href="<?php echo BASEURL; ?>/accounts/logout/">
+            
+            Log Out
+            
+        </a>
+        
+    </li>
+    </ul>
+
+                </div>
+            </nav>
+        </div>
+    </div>
+    <div class="main">
+        <div class="wrapper">
+            <section class="nav-page-content" role="main">
+                
+
+    <header>
+        <h1>Authorized Applications</h1>
+    </header>
+
+    
+
+
+
+    
+
+    <p>You have not authorized any applications to access your Instagram account.</p>
+
+    
+
+
+            </section>
+        </div> <!-- .main -->
+    </div> <!-- .main -->
+
+
+    </div> <!-- .page -->
+
+    
+    <footer class="page-footer">
+        <div class="wrapper">
+            <nav>
+                <ul>
+                    <li><a href="<?php echo BASEURL; ?>/accounts/edit/">Your Account</a></li>
+                    <li><a href="<?php echo BASEURL; ?>/about/us/">About us</a></li>
+                    <li><a href="http://help.instagram.com/">Support</a></li>
+                    <li><a href="http://blog.instagram.com/">Blog</a></li>
+                    <li><a href="<?php echo BASEURL; ?>/developer/">API</a></li>
+                    <li><a href="<?php echo BASEURL; ?>/about/jobs/">Jobs</a></li>
+                    <li><a href="<?php echo BASEURL; ?>/about/legal/privacy/">Privacy</a></li>
+                    <li><a href="<?php echo BASEURL; ?>/about/legal/terms/">Terms</a></li>
+                </ul>
+            </nav>
+
+            <p class="copyright">&copy; 2012 <?php echo SITE_NAME; ?></p>
+        </div>
+    </footer>
+    
+
+
+</div> <!-- .root -->
+
+<?php if( @$_SESSION['SITE_DEBUG'] ): ?>
+	<textarea style="width: 100%;" rows="50" cols="50" readonly="readonly">
+	*** DEBUG ***
+	------------------
+	
+	SESSION:
+	------------------
+	<?php print_r( $_SESSION ); ?>
+	</textarea> 
+<?php endif; ?>
+
+
+</body>
+</html>
